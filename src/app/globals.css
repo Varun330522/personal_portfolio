@@ -2,32 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,1000&display=swap");
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  --tw-bg-opacity: 1;
+  background-color: #0a192f;
+  color: #e6f1ff;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+p {
+  pointer-events: none;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+  transition: width 0.3s;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  transition: width 0.3s, border-radius 0.3s;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.scroll-container:hover ::-webkit-scrollbar-thumb {
+  width: 15px;
+  border-radius: 8px;
+}
+
+.leftside-hero-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  width: 50%;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.box-shadow-style {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+
+  &:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.tw-buzz {
+  animation: buzz 0.2s linear infinite;
+}
+
+@keyframes buzz {
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .leftside-hero-wrapper {
+    position: relative;
+    height: auto;
+    overflow-y: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text-5xl {
+    font-size: 2rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .max-w-xs {
+    max-width: 15rem;
   }
 }
