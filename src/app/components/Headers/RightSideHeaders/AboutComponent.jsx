@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion"
 import React, { useEffect, useRef } from "react"
 import Typewriter from "../../AnimatedComponents/TypeWriter"
