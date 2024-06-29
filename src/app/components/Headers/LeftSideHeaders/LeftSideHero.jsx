@@ -5,10 +5,18 @@ import Typewriter from "../../AnimatedComponents/TypeWriter"
 const Leftsidehero = () => {
   const items = ["about", "work", "project", "blog", "skills", "contact"]
   const svgs_icon = [
-    { class: "ci ci-github-light ci-2x", target: "https://github.com" },
-    { class: "ci ci-leetcode ci-2x", target: "https://leetcode.com" },
-    { class: "ci ci-linkedin ci-2x", target: "https://linkedin.com" },
-    { class: "ci ci-twitter ci-2x", target: "https://twitter.com" },
+    {
+      class: "ci ci-github-light ci-2x",
+      target: "https://github.com/Varun330522/",
+    },
+    {
+      class: "ci ci-leetcode ci-2x",
+      target: "https://leetcode.com/u/varunpersonal4/",
+    },
+    {
+      class: "ci ci-linkedin ci-2x",
+      target: "https://www.linkedin.com/in/varun-sheth-a66183190/",
+    },
   ]
 
   const containerVariants = {
